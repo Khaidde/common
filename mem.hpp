@@ -59,6 +59,11 @@ void memory_swap(T *first, T *second, i32 count) {
   memory_copy(second, &temp, count);
 }
 
+template <typename T>
+T *memory_calloc(i32 count) {
+  return (T *)malloc(sizeof(T) * u32(count));
+}
+
 struct ArenaAllocator {
   static const i32 capacity = 64 * 1024 * 1024;
 
